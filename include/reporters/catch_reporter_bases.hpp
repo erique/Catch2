@@ -258,7 +258,7 @@ namespace Catch {
     };
 
     template<char C>
-    char const* getLineOfChars() {
+    static char const* getLineOfChars() {
         static char line[CATCH_CONFIG_CONSOLE_WIDTH] = {0};
         if( !*line ) {
             std::memset( line, C, CATCH_CONFIG_CONSOLE_WIDTH-1 );

@@ -13,7 +13,7 @@
 #include <exception>
 
 namespace Catch {
-
+/*
     class StartupExceptionRegistry {
     public:
         void add(std::exception_ptr const& exception) noexcept;
@@ -21,7 +21,7 @@ namespace Catch {
     private:
         std::vector<std::exception_ptr> m_exceptions;
     };
-
+*/
 } // end namespace Catch
 
 #endif // TWOBLUECUBES_CATCH_STARTUP_EXCEPTION_REGISTRY_H_INCLUDED

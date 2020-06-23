@@ -37,7 +37,7 @@ namespace Catch {
         virtual IExceptionTranslatorRegistry const& getExceptionTranslatorRegistry() const = 0;
 
 
-        virtual StartupExceptionRegistry const& getStartupExceptionRegistry() const = 0;
+//        virtual StartupExceptionRegistry const& getStartupExceptionRegistry() const = 0;
     };
 
     struct IMutableRegistryHub {

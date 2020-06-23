@@ -83,8 +83,8 @@ namespace Catch {
                     getResultCapture().benchmarkEnded(stats);
 
                 } CATCH_CATCH_ALL{
-                    if (translateActiveException() != Detail::benchmarkErrorMsg) // benchmark errors have been reported, otherwise rethrow.
-                        std::rethrow_exception(std::current_exception());
+                    // if (translateActiveException() != Detail::benchmarkErrorMsg) // benchmark errors have been reported, otherwise rethrow.
+                    //     std::rethrow_exception(std::current_exception());
                 }
             }
 

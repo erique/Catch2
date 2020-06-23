@@ -51,7 +51,7 @@ namespace Catch {
 #else
                 try {
                     if( it == itEnd )
-                        std::rethrow_exception(std::current_exception());
+                        rethrow_exception(current_exception());
                     else
                         return (*it)->translate( it+1, itEnd );
                 }

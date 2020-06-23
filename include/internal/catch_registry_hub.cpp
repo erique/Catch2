@@ -38,9 +38,9 @@ namespace Catch {
             ITagAliasRegistry const& getTagAliasRegistry() const override {
                 return m_tagAliasRegistry;
             }
-            StartupExceptionRegistry const& getStartupExceptionRegistry() const override {
-                return m_exceptionRegistry;
-            }
+            // StartupExceptionRegistry const& getStartupExceptionRegistry() const override {
+            //     return m_exceptionRegistry;
+            // }
 
         public: // IMutableRegistryHub
             void registerReporter( std::string const& name, IReporterFactoryPtr const& factory ) override {
@@ -59,7 +59,7 @@ namespace Catch {
                 m_tagAliasRegistry.add( alias, tag, lineInfo );
             }
             void registerStartupException() noexcept override {
-                m_exceptionRegistry.add(std::current_exception());
+//                m_exceptionRegistry.add(std::current_exception());
             }
             IMutableEnumValuesRegistry& getMutableEnumValuesRegistry() override {
                 return m_enumValuesRegistry;
@@ -70,7 +70,7 @@ namespace Catch {
             ReporterRegistry m_reporterRegistry;
             ExceptionTranslatorRegistry m_exceptionTranslatorRegistry;
             TagAliasRegistry m_tagAliasRegistry;
-            StartupExceptionRegistry m_exceptionRegistry;
+           // StartupExceptionRegistry m_exceptionRegistry;
             Detail::EnumValuesRegistry m_enumValuesRegistry;
         };
     }

@@ -17,17 +17,21 @@ namespace Catch {
     void addSingleton( ISingleton* singleton );
     void cleanupSingletons();
 
+    template<typename T>
+    static T* getStaticSingletonInstance() {
+        static T* t = nullptr;
+        if( !t ) {
+            t = new T;
+            addSingleton( t );
+        }
+        return t;
+    }
 
     template<typename SingletonImplT, typename InterfaceT = SingletonImplT, typename MutableInterfaceT = InterfaceT>
     class Singleton : SingletonImplT, public ISingleton {
 
         static auto getInternal() -> Singleton* {
-            static Singleton* s_instance = nullptr;
-            if( !s_instance ) {
-                s_instance = new Singleton;
-                addSingleton( s_instance );
-            }
-            return s_instance;
+            return getStaticSingletonInstance<Singleton>();
         }
 
     public:
